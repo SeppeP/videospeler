@@ -6,8 +6,9 @@ class Playlist extends EventEmitter2 {
     super({}); // roep de constructor op van EventEmitter2
     this.$el = $el;
     this._items = this.parseItemsFromEl();
-    this._currentIndex = 0; // _ is voor items die je niet van buitenaf haalt
+    this.currentIndex = 0; // _ is voor items die je niet van buitenaf haalt
     console.log(this._items);
+    this.addListenersToPlaylistLinks();
   }
 
   get currentIndex(){
@@ -25,8 +26,39 @@ class Playlist extends EventEmitter2 {
       return; // doe niets indien dit al de huidige index is
      }
 
-     this.currentIndex = value;
+     this._currentIndex = value;
+
+
+     const $links = this.$el.querySelectorAll(`.playlist__link`);
+
+     $links.forEach(($link, index) => {
+      if(index===this._currentIndex){
+        $link.classList.add("playlist__link--current");
+      }else {
+        $link.classList.remove("playlist__link--current");
+      }
+     });
      
+  }
+
+  eventHandler(e, index) {
+    console.log('in de handler');
+    e.preventDefault();
+    this.currentIndex = index;
+  }
+
+  addListenersToPlaylistLinks(){
+
+    const $links = this.$el.querySelectorAll(`.playlist__link`);
+    $links.forEach(($link, index) =>{
+      console.log($link);
+      $link.addEventListener('click', e => this.eventHandler(e, index));
+
+    })
+
+    
+
+
   }
 
   parseItemsFromEl(){
