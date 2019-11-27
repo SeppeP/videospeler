@@ -16,7 +16,7 @@ body {
   background: var(--color-light);
 }
 
-.visually-hidden {
+.visually-hidden { /* bij display none zal screenreader het niet voorlezen, door deze class lezen ze het wel nog voor*/
   position: absolute !important;
   height: 1px;
   width: 1px;
@@ -30,9 +30,9 @@ body {
   position: relative;
   width: 100%;
   height: 0;
-  padding-top: 56.25%;
+  padding-top: 56.25%;  /*Zorg dat de video in 16:9 aspect ratio blijft, zorg dat de video niet afgesneden word*/
 
-  & > * {
+  & > * { /* de directe child selecteren*/
     position: absolute;
     left: 0;
     top: 0;
