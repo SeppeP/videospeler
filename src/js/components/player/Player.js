@@ -1,7 +1,7 @@
 import EventEmitter2 from 'eventemitter2';
 import Playlist from './Playlist.js';
 
-const KEYCODE_SPACE = 32;
+const KEYCODE_SPACE = 32; /* contantes die echt NOOIT veranderen schrijf je in hoofdletters*/
 const KEYCODE_P = 80;
 const KEYCODE_N = 78;
 const KEYCODE_B = 66;
