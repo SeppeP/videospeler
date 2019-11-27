@@ -7,7 +7,7 @@ class Playlist extends EventEmitter2 {
     this.$el = $el;
   }
 
-  parseItemsFrom1(){
+  parseItemsFromEl(){
 
   }
 
