@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playlist</title>
+</head>
+<body>
+  <div class="player">
+    <div class="responsive-16by9 player__video-wrapper">
+      <video class="player__video" autoplay playsinline></video>
+    </div>
+    <ul class="player__controls">
+      <li><button class="player-button player-button--play"><span class="visually-hidden">Play</span></button></li>
+      <li><button class="player-button player-button--pause"><span class="visually-hidden">Pause</span></button></li>
+      <li><button class="player-button player-button--previous"><span class="visually-hidden">Previous</span></button></li>
+      <li><button class="player-button player-button--next"><span class="visually-hidden">Next</span></button></li>
+      <li><progress class="player-progress" value="0" min="0"></progress></li>
+    </ul>
+    <ul class="playlist">
+      <li>
+        <a href="assets/videos/reel_2019.mp4" class="playlist__link">Reel 2019</a>
+      </li>
+      <li>
+        <a href="assets/videos/internships.mp4" class="playlist__link">Internships</a>
+      </li>
+      <li>
+        <a href="assets/videos/projects.mp4" class="playlist__link">10 Years of Projects</a>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
