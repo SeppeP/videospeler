@@ -6,17 +6,27 @@ class Playlist extends EventEmitter2 {
     super({}); // roep de constructor op van EventEmitter2
     this.$el = $el;
     this._items = this.parseItemsFromEl();
-    this._currentIndex = 0;
-
+    this._currentIndex = 0; // _ is voor items die je niet van buitenaf haalt
     console.log(this._items);
   }
 
-  get _currentIndex(){
+  get currentIndex(){
     return this._currentIndex;
   }
 
-  set _currentIndex(value){
-    this._currentIndex = value;
+  set currentIndex(value){
+    if (value < 0) {
+      value = this._items.length - 1;
+     }
+     if (value > this._items.length -1) {
+      value = 0;
+     }
+     if (value === this._currentIndex) {
+      return; // doe niets indien dit al de huidige index is
+     }
+
+     this.currentIndex = value;
+     
   }
 
   parseItemsFromEl(){
